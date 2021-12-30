@@ -1,0 +1,132 @@
+<devicedata>
+  <copyright>Copyright 2020 Jeremy Boron. All Rights Reserved.</copyright>
+  <manufacturer>Jeremy Boron</manufacturer>
+  <name>Benq</name>
+  <model>RP6502</model>
+  <creator>Jeremy T. Boron</creator>
+  <created>08/11/2020 12:21 AM</created>
+  <modified>08/11/2020 12:21 AM</modified>
+  <version>3</version>
+  <control>lua_gen</control>
+  <driver>DriverWorks</driver>
+  <auto_update>true</auto_update>
+  <minimum_auto_update_version>1</minimum_auto_update_version>
+  <minimum_os_version>2.7.0</minimum_os_version>
+  <config>
+    <script file="driver.lua"></script>
+    <documentation file="www/documentation.rtf" />
+    <properties>
+      <property>
+        <name>IP Address</name>
+        <type>STRING</type>
+        <default>127.0.0.1</default>
+      </property>
+      <property>
+        <name>Port</name>
+        <type>STRING</type>
+        <default>4660</default>
+      </property>
+    </properties>
+    <commands>
+      <command>
+        <name>New Command 1</name>
+        <description>Command Description 1</description>
+      </command>
+    </commands>
+    <actions>
+      <action>
+        <name>Turn ON</name>
+        <command>TurnON</command>
+      </action>
+      <action>
+        <name>Turn OFF</name>
+        <command>TurnOFF</command>
+      </action>
+      <action>
+        <name>Standby</name>
+        <command>Standby</command>
+      </action>
+      <action>
+        <name>Input_VGA</name>
+        <command>VGA</command>
+      </action>
+      <action>
+        <name>Input_HDMI</name>
+        <command>hdmi</command>
+      </action>
+      <action>
+        <name>Input_HDMI1</name>
+        <command>hdmi1</command>
+      </action>
+      <action>
+        <name>Input_HDMI2</name>
+        <command>hdmi2</command>
+      </action>
+      <action>
+        <name>Input_Android</name>
+        <command>android</command>
+      </action>
+      <action>
+        <name>Volume+</name>
+        <command>volup</command>
+      </action>
+      <action>
+        <name>Volume-</name>
+        <command>voldown</command>
+      </action>
+      <action>
+        <name>MuteON</name>
+        <command>muteon</command>
+      </action>
+      <action>
+        <name>MuteOFF</name>
+        <command>muteoff</command>
+      </action>
+    </actions>
+    <power_management_method>DiscreteCodes</power_management_method>
+    <power_delay>0</power_delay>
+    <power_command_delay>0</power_command_delay>
+    <power_command_needed>False</power_command_needed>
+    <rfs>
+      <rf>rf_cable</rf>
+      <rf>rf_uhf_vhf</rf>
+    </rfs>
+  </config>
+  <proxies qty="2">
+    <proxy proxybindingid="5000">generic_http</proxy>
+    <proxy proxybindingid="5001">tv</proxy>
+  </proxies>
+  <events>
+    <event>
+      <id>1</id>
+      <name>Success</name>
+      <description>No cURL errors</description>
+    </event>
+    <event>
+      <id>2</id>
+      <name>Error</name>
+      <description>cURL error received</description>
+    </event>
+  </events>
+  <composer_categories>
+    <category>Audio/Video</category>
+  </composer_categories>
+  <controlmethod>ip</controlmethod>
+  <connections>
+    <connection>
+      <id>5001</id>
+      <connectionname>tv</connectionname>
+      <facing>0</facing>
+      <type>2</type>
+      <consumer>false</consumer>
+      <audiosource>false</audiosource>
+      <videosource>false</videosource>
+      <linelevel>false</linelevel>
+      <classes>
+        <class>
+          <classname>TV</classname>
+        </class>
+      </classes>
+    </connection>
+  </connections>
+</devicedata>
